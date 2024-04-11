@@ -1,11 +1,21 @@
 # AR_FinalProject
-## Project Proposal: AR Car Fearture Guide
-The proposed project aims to develop an Augmented Reality (AR) application that enhances the user experience by providing real-time information and instructional videos about different controls within a car. The application will leverage AR technology to detect various controls, offer descriptions of their functions, and present instructional videos or overlays on real objects demonstrating how to use each control effectively. The main objective is to develop an AR system capable of accurately detecting and recognizing different types of controls found in cars mainly focusing on the controls in front of the driver’s seat which are essential for drivers to know how to operate the car properly and be able to utilize those smart features fully. 
+## Project: Collaborative Navigation 
 
-Some main steps to achieving this goal include mapping the interior of the car and capturing those main controls that I want to direct the user’s attention to. This process requires some amount of precision to detail to ensure accurate detection and recognition of controls during AR interactions. Using tools provided by the Vuforia Engine SDK, I will create object targets for each control and integrate them into the AR application in Unity.
+This project explores the use of Augmented Reality in a Collaborative Navigation task. A collaborative navigation task involves at least two parties communicating with one another, one playing the leader's role and the other as the follower. The leader's role is to instruct the follower to navigate an environment (i.e, a building) to find target objects. The follower's role is to follow instructions and travel through the space as instructed. 
 
-Once the controls are mapped and object targets are created, I will design and implement a user-friendly interface for the AR application. The interface will include intuitive AR interactions that allow users to look at the controls to trigger real-time information and instructional videos. I may decide to allow them to point to a specific control rather than using gaze to trigger the information. In addition, I also plan to incorporate real-time guidance features into the AR application. This involves developing functionalities that provide contextual guidance on how to manipulate specific controls to achieve a certain action. For example, when a user points the device at the steering wheel, the application may overlay instructions on how to engage cruise control or adjust vehicle settings.
+This project involves two applications, one for the leader and one for the follower, that will communicate with each other. Currently, I am planning to use Photon Voice as a means of communication, but if this does not work a phone call will be used as a substitute. The leader application will be a VR desktop application that will stream the video from the follower's camera. This will allow them to know the location of the followers and direct them to the targets. The follower application will be deployed on the HoloLens 2, and the video of the follower's first point of view will be sent to the leader. We can tell that they have found a target by having them scan the QR code of the target. 
 
-Once the AR application is finished, I plan to deploy it on the Microsoft HoloLens 2. In terms of software, I will be utilizing Vuforia Engine SDK to help me with creating object targets and also mapping the inside of the car. 
+What has been done: 
+- I have tried to implement voice networking but found out that to be able to use it on a HoloLens 2 I needed to use a special addon SDK to support the ARM64 build. This comes with a subscription cost so I contacted the Photon company to help out. Still waiting for an answer but this is not a big concern since we can use phone calls as a substitute.
+- I have successfully set up a Unity project on the HoloLens 2. This took quite some time for me as this is my first time working with the HoloLens and I encountered a lot of errors when trying to compile just a simple project and deploy it to the Hololens2 via USB. I spent quite some time debugging this issue. This will be crucial as it will allow me to work on streaming the live video to the Unity desktop Application.
+- I also created a Unity desktop application to communicate with applications deployed in the HoloLens2. I have set up Photon Networking for it but I will have to connect the HoloLens to it somehow.
+
+Next Steps:
+- Implement Video Streaming
+- Add QR code scanning for Follower Application
+- Implement Voice Network (if receive alternate solution from Photon people)
+   
+
+
 
 
