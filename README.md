@@ -13,7 +13,7 @@ What has been done:
 Next Steps:
 - Implement Video Streaming
 - Add QR code scanning for Follower Application
-- Implement Voice Network (if receive alternate solution from Photon people)
+- Implement Voice Network (if receive an alternate solution from Photon people)
    
 
 
